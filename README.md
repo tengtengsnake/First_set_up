@@ -1,2 +1,2 @@
 # First_set_up
-auto install packages
+auto install packages for debian linux
