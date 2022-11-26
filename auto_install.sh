@@ -21,5 +21,7 @@ sudo apt install code # or code-insiders
 
 sudo apt-get install python3.10
 
+sudo snap install telegram-desktop
+
 wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
 bash Anaconda-latest-Linux-x86_64.sh
