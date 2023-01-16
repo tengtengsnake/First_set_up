@@ -11,6 +11,9 @@ sudo apt install ibus-chewing
 
 sudo apt install libfuse # for balena etcher
 
+sudo apt install openssh-server
+
+
 sudo apt install brave-browser
 
 sudo apt-get install wget gpg
