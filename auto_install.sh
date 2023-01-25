@@ -8,7 +8,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 sudo apt update
 
 sudo apt install ibus-chewing
-
+sudo apt install vlock
 sudo apt install libfuse # for balena etcher
 
 sudo apt install openssh-server
