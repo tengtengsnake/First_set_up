@@ -14,6 +14,7 @@ sudo apt install libfuse # for balena etcher
 sudo apt install openssh-server
 sudo apt install openssh-client
 
+sudo apt install sysstat
 sudo apt install brave-browser
 
 sudo apt-get install wget gpg
