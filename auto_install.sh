@@ -1,5 +1,6 @@
 #!/bin/sh
-sudo apt update 
+sudo apt update
+sudo apt install screen
 sudo apt install apt-transport-https curl
 
 sudo apt install ibus-chewing
