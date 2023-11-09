@@ -5,7 +5,7 @@ sudo apt install apt-transport-https curl
 
 sudo apt install ibus-chewing
 sudo apt install fcitx5 fcitx5-rime
-
+sudo apt-get install git
 sudo apt install vlock
 sudo apt install libfuse # for balena etcher
 
