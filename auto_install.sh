@@ -13,6 +13,7 @@ sudo apt install openssh-server
 sudo apt install openssh-client
 
 sudo apt install sysstat
+sudo apt install graphviz # for plot_model 
 
 sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
