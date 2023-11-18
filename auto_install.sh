@@ -16,6 +16,13 @@ sudo apt install openssh-client
 sudo apt install sysstat
 sudo apt install graphviz # for plot_model 
 
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.usebottles.bottles
+flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications 
+# Install the Line with flatpak and wine
+
 sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
