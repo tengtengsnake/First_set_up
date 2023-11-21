@@ -15,7 +15,7 @@ sudo apt install openssh-client
 
 sudo apt install sysstat
 sudo apt install graphviz # for plot_model 
-
+sudo apt cmatrx
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
