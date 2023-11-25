@@ -2,7 +2,7 @@
 sudo apt update
 sudo apt install screen
 sudo apt install apt-transport-https curl
-sudo apt install htop
+sudo apt install btop
 sudo apt install ibus-chewing
 sudo apt install fcitx5 fcitx5-rime
 sudo apt install vlc # mp4 player
