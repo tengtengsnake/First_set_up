@@ -9,7 +9,7 @@ sudo apt install vlc # mp4 player
 sudo apt-get install git
 sudo apt install vlock
 sudo apt install libfuse # for balena etcher
-
+sudo apt install apci # battery check
 sudo apt install openssh-server
 sudo apt install openssh-client
 
