@@ -54,5 +54,5 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
 
-wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+wget https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh
 bash Anaconda-latest-Linux-x86_64.sh
