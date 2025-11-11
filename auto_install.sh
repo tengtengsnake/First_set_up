@@ -1,58 +1,51 @@
 #!/bin/bash
 
+# 輸出 ASCII 藝術
 cat << 'EOF'
-                       _oo0oo_'
-                      o8888888o'
-                      88" . "88'
-                      (| -_- |)'
-                      0\  =  /0'
-                    ___/`---'\___'
-                  .' \\|     |// '.'
-                 / \\|||  :  |||// \'
-                / _||||| -:- |||||- \'
-               |   | \\\  -  /// |   |'
-               | \_|  ''\---/''  |_/ |'
-               \  .-\__  '-'  ___/-. /'
-             ___'. .'  /--.--\  `. .'___'
-          ."" '<  `.___\_<|>_/___.' >' "".'
-         | | :  `- \`.;`\ _ /`;.`/ - ` : | |'
-         \  \ `_.   \_ __\ /__ _/   .-` /  /'
-     =====`-.____`.___ \_____/___.-`___.-'====='
-                 `=---='  May the Buddha bless us — no bugs!
+                       _oo0oo_'
+                      o8888888o'
+                      88" . "88'
+                      (| -_- |)'
+                      0\  =  /0'
+                    ___/`---'\___'
+                  .' \\|     |// '.'
+                 / \\|||  :  |||// \'
+                / _||||| -:- |||||- \'
+               |   | \\\  -  /// |   |'
+               | \_|  ''\---/''  |_/ |'
+               \  .-\__  '-'  ___/-. /'
+             ___'. .'  /--.--\  `. .'___'
+          ."" '<  `.___\_<|>_/___.' >' "".'
+         | | :  `- \`.;`\ _ /`;.`/ - ` : | |'
+         \  \ `_.   \_ __\ /__ _/   .-` /  /'
+     =====`-.____`.___ \_____/___.-`___.-'====='
+                 `=---='  May the Buddha bless us — no bugs!
 EOF
 
+## 1. 更新並合併安裝所有 APT 套件
+# 包含：screen, curl, btop, 輸入法, vlc, git, vlock, libfuse, acpi, ssh, sysstat, graphviz, cmatrix, flatpak, wget, gpg
 sudo apt update
-sudo apt install screen
-sudo apt install apt-transport-https curl
-sudo apt install btop
-sudo apt install ibus-chewing
-sudo apt install fcitx5 fcitx5-rime
-sudo apt install vlc # mp4 player
-sudo apt-get install git
-sudo apt install vlock
-sudo apt install libfuse # for balena etcher
-sudo apt install apci # battery check
-sudo apt install openssh-server
-sudo apt install openssh-client
+sudo apt install -y screen apt-transport-https curl btop ibus-chewing fcitx5 fcitx5-rime vlc git vlock libfuse acpi openssh-server openssh-client sysstat graphviz cmatrix flatpak gnome-software-plugin-flatpak wget gpg hexedit
 
-sudo apt install sysstat
-sudo apt install graphviz # for plot_model 
-sudo apt cmatrx
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
+## 2. Flatpak 應用程式設定 (Bottles)
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.usebottles.bottles
-flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications 
-# Install the Line with flatpak and wine
+flatpak install flathub com.usebottles.bottles -y
+flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications
+# Line app with flatpak/wine installation would go here
 
-sudo apt-get install wget gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-sudo apt install apt-transport-https
+## 3. 安裝 Visual Studio Code
+echo "--- Installing Visual Studio Code ---"
+# 下載金鑰並存入 /etc/apt/keyrings
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo install -D /dev/stdin -o root -g root -m 644 /etc/apt/keyrings/packages.microsoft.gpg
+# 添加 VS Code 倉庫到 sources.list
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+# 重新更新套件列表並安裝 Code
 sudo apt update
-sudo apt install code # or code-insiders
+sudo apt install -y code
 
-wget https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh
-bash Anaconda-latest-Linux-x86_64.sh
+## 4. 安裝 Anaconda
+echo "--- Installing Anaconda ---"
+ANACONDA_FILE="Anaconda3-2025.06-1-Linux-x86_64.sh"
+wget "https://repo.anaconda.com/archive/$ANACONDA_FILE"
+bash "$ANACONDA_FILE" -b # -b 參數用於非互動式安裝
+rm -f "$ANACONDA_FILE"
