@@ -24,7 +24,7 @@ EOF
 
 ## 1. 更新並合併安裝所有 APT 套件
 sudo apt update
-sudo apt install -y screen apt-transport-https curl btop ibus-chewing fcitx5 fcitx5-rime vlc git vlock libfuse acpi openssh-server openssh-client sysstat graphviz cmatrix flatpak gnome-software-plugin-flatpak wget gpg hexedit checksec libnss3 remmina pdfcrack sudo apt install fcrackzip
+sudo apt install -y screen apt-transport-https curl btop ibus-chewing fcitx5 fcitx5-rime vlc git vlock libfuse acpi openssh-server openssh-client sysstat graphviz cmatrix flatpak gnome-software-plugin-flatpak wget gpg hexedit checksec libnss3 remmina pdfcrack sudo apt install fcrackzip sudo apt install auditd
 
 ## 2. Flatpak 應用程式設定 (Bottles)
 flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
