@@ -49,3 +49,4 @@ wget "https://repo.anaconda.com/archive/$ANACONDA_FILE"
 bash "$ANACONDA_FILE" -b # -b 參數用於非互動式安裝
 rm -f "$ANACONDA_FILE"
 export AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE"
+export AWS_SECRET_ACCESS_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
