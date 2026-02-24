@@ -48,4 +48,4 @@ ANACONDA_FILE="Anaconda3-2025.06-1-Linux-x86_64.sh"
 wget "https://repo.anaconda.com/archive/$ANACONDA_FILE"
 bash "$ANACONDA_FILE" -b # -b 參數用於非互動式安裝
 rm -f "$ANACONDA_FILE"
-export PASSWORD=test_pass_word_leaks
+export AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE"
