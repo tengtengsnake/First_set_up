@@ -48,5 +48,7 @@ ANACONDA_FILE="Anaconda3-2025.06-1-Linux-x86_64.sh"
 wget "https://repo.anaconda.com/archive/$ANACONDA_FILE"
 bash "$ANACONDA_FILE" -b # -b 參數用於非互動式安裝
 rm -f "$ANACONDA_FILE"
-export AWS_ACCESS_KEY_ID="AKIAIOSFODNN7EXAMPLE"
+# 補上這行 Secret Key，讓特徵變完整
 export AWS_SECRET_ACCESS_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+# 或是隨機生成一個看起來像 Key 的 40 字元字串
+export DUMMY_KEY="aB1cS2dT3eF4gG5hH6iI7jJ8kK9lL0mMnNoOpPqQ"
